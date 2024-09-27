@@ -1,0 +1,47 @@
+#menu {
+    .menu-wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 12.5rem;
+        @include tab {
+            flex-direction: column;
+            gap: 6rem;
+        }
+        h4 {
+            font-family: 'Roboto Mono', system-ui;
+            font-size: 3rem;
+            line-height: 1;
+            text-align: center;
+            margin-top: 3.7rem;
+            margin-bottom: 3.4rem;
+            font-weight: bold;
+            @include tab {
+                text-align: left;
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+                font-weight: bold;
+                padding: 0 1.3rem;
+            }
+        }
+        p {
+            &:first-of-type {
+                line-height: calc(19 / 16);
+                padding: 0 1rem;
+                margin-bottom: 3.4rem;
+                @include tab {
+                    padding: 0 1.3rem;
+                    margin-bottom: 2.6rem;
+                    letter-spacing: 0.16rem;
+                }
+            }
+            &:last-of-type {
+                text-align: right;
+                padding: 0 1rem;
+                line-height: 1;
+                @include tab {
+                    padding: 0 1.3rem;
+                }
+            }
+        }
+    }
+}

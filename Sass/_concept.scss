@@ -1,0 +1,89 @@
+#concept {
+    width: 100%;
+    position: relative;
+    .background {
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 40%;
+            background-color: #a193861f;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 60%;
+            background-color: #a1938689;
+            position: absolute;
+            top: 40%;
+            left: 0;
+            z-index: -1;
+        }
+    }
+
+    .concept-img-wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 7rem;
+        @include tab {
+            gap: 0.7rem;
+            margin-bottom: 5rem;
+        }
+        figure {
+            @include tab {
+                flex: 1;
+                height: 20.5rem;
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    &:first-of-type {
+                        object-position: 92% 50%;
+                    }
+                }
+            }
+        }
+    }
+    .concept-text-wrapper {
+        @extend .concept-img-wrapper;
+        gap: 0;
+        padding: 0 8rem;
+        color: #fff;
+        margin-bottom: 0;
+        @include tab {
+            flex-direction: column;
+            gap: 2rem;
+            padding: 0;
+        }
+        p {
+            &:first-child {
+                padding-top: 1rem;
+                letter-spacing: 1.6rem;
+                font-size: 4rem;
+                line-height: 1;
+                font-family: 'Noto Serif JP';
+                flex: 1.5;
+                @include tab {
+                    text-align: center;
+                    padding-top: 0;
+                    letter-spacing: 0.7rem;
+                    font-size: 1.8rem;
+                    line-height: 1;
+                    flex: 1;
+                }
+            }
+            &:last-child {
+                line-height: calc(27 / 16);
+                flex: 1;
+                @include tab {
+                    letter-spacing: 0.16rem;
+                }
+            }
+        }
+    }
+}
